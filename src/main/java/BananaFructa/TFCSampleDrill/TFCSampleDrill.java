@@ -5,6 +5,7 @@ import blusunrize.immersiveengineering.common.IEContent;
 import blusunrize.immersiveengineering.common.blocks.metal.TileEntitySampleDrill;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.world.BlockEvent;
@@ -13,6 +14,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -23,7 +25,7 @@ public class TFCSampleDrill {
 
     public static final String modId = "tfcsampledrill";
     public static final String name = "TFC Sample Drill";
-    public static final String version = "1.0.0";
+    public static final String version = "1.0.1";
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -34,6 +36,7 @@ public class TFCSampleDrill {
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
         if (Config.hideIEMinerals) ExcavatorHandler.mineralList.clear();
+        GameRegistry.registerTileEntity(TileEntitySamplerDrillModified.class,new ResourceLocation(modId,TileEntitySamplerDrillModified.class.getSimpleName()));
     }
 
     @SubscribeEvent

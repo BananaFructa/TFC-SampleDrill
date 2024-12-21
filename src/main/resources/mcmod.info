@@ -3,7 +3,7 @@
   "modid": "tfcsampledrill",
   "name": "TFC Sample Drill",
   "description": "Addon for TerraFirmaCraft and Immersive Engineering that adds TFC ore vein descriptions to sample cores created by the core sample drill.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
